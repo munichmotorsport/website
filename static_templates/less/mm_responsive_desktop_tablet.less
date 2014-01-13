@@ -1,0 +1,29 @@
+/**
+ * Smallest viewport set to tablet (768px)
+ * These settings are active on desktop and tablet displays
+ */
+@media (min-width: @screen-sm-min)
+{
+	.head-logo {
+		img {
+			&.img-responsive {
+				max-height: 90px;
+				display: inline-block;
+			}
+		}
+	}
+
+	.navbar {
+		.navbar-brand {
+			padding: 0;
+			span {
+				display: none;
+			}
+		}
+	}
+
+	.navbar-collapse {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

@@ -1,0 +1,541 @@
+//
+// Typography
+// --------------------------------------------------
+
+.red-banner {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 18px;
+	font-weight: 300;
+	border-bottom: 3px solid @brand-primary;
+	text-transform: uppercase;
+	span {
+		background-color: @brand-primary;
+		color: #fff;
+		padding: 5px 10px;
+		display: inline-block;
+	}
+	small {
+		margin-left: 5px;
+	}
+}
+
+
+
+//
+// Navbar
+// --------------------------------------------------
+
+.navbar-default {
+	&.navbar-fixed-top {
+		.box-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
+	}
+	.navbar-static-top;
+	margin-bottom: 0;
+	border: 0 none;
+	background-color: @navbar-default-bg;
+
+	.navbar-brand {
+		color: @navbar-default-brand-color;
+		&:hover,
+		&:focus {
+			color: @navbar-default-brand-hover-color;
+			background-color: @navbar-default-brand-hover-bg;
+		}
+		img {
+			padding-right: 15px;
+			height: @navbar-height;
+		}
+	}
+
+	.navbar-nav {
+		> li {
+			> a {
+				color: @navbar-default-link-color;
+				.transition(background-color 0.15s linear);
+				&:hover,
+				&:focus {
+					color: @navbar-default-link-hover-color;
+					background-color: @navbar-default-link-hover-bg;
+				}
+			}
+			> .dropdown-menu {
+				border-radius: 0;
+				a {
+					padding-top: 5px;
+					padding-bottom: 5px;
+					.transition-property(color, background-color;);
+					.transition-duration(0.25s, 0.25s;);
+					&:hover,
+					&:focus {
+						color: #fff;
+						background-color: @gray;
+					}
+				}
+			}
+		}
+		> .active > a {
+			&,
+			&:hover,
+			&:focus {
+				color: @navbar-default-link-active-color;
+				background-color: @navbar-default-link-active-bg;
+			}
+		}
+		> .disabled > a {
+			&,
+			&:hover,
+			&:focus {
+				color: @navbar-default-link-disabled-color;
+				background-color: @navbar-default-link-disabled-bg;
+			}
+		}
+	}
+}
+
+
+
+//
+// Header
+// --------------------------------------------------
+
+header {
+	/*border-top: 3px solid @gray-lighter;*/
+	padding: 20px 0 0 0;
+	margin-bottom: -1px;
+
+	.header-nav {
+		margin-top: -5px;
+		.nav li {
+			font-size: @font-size-small;
+			> a {
+				color: @gray;
+				border-radius: 0;
+				padding: 5px 10px;
+				&:hover,
+				&:focus {
+					color: @brand-primary;
+					text-decoration: underline;
+					background-color: transparent;
+				}
+			}
+			&.active {
+				> a {
+					&,
+					&:hover,
+					&:focus {
+						color: @brand-primary;
+						text-decoration: underline;
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+//
+// Breadcrumb
+// --------------------------------------------------
+
+.breadcrumb {
+	background-color: transparent;
+	font-size: @font-size-small;
+	border-radius: 0;
+	padding: 0;
+	margin-bottom: 30px;
+	li {
+		> i {
+			margin-right: 5px;
+		}
+		&.active {
+			color: @gray;
+		}
+	}
+}
+
+
+
+//
+// Jumbotron (Teaser)
+// --------------------------------------------------
+
+.jumbotron {
+	padding: 40px 0;
+	/*margin-bottom: 50px;*/
+	&.teaser {
+		padding: 0;
+	}
+	.page-title {
+		.h1;
+		margin: 0;
+	}
+}
+
+
+
+//
+// Carousel
+// --------------------------------------------------
+
+.carousel {
+	.carousel-inner {
+		.item {
+			max-height: 500px;
+			.carousel-caption {
+				padding: 0 0 65px 0;
+				left: 15%;
+				right: auto;
+				text-align: left;
+				text-shadow: none;
+				h3, p {
+					line-height: 1.4em;
+					span {
+						.bg-color-trans(@brand-primary, 0.87);
+						padding: 5px 10px;
+					}
+				}
+				h3 {
+					font-size: 24px;
+					font-weight: 600;
+					margin-bottom: 12px;
+				}
+				p {
+					font-weight: 300;
+					font-size: 20px;
+				}
+			}
+		}
+	}
+
+	&.content-slider {
+		.item-content-text {
+			padding-right: 50px;
+			h1 {
+				font-size: 20px;
+				margin-bottom: 20px;
+			}
+		}
+		.carousel-control {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 60px;
+			.opacity(@carousel-control-opacity);
+			/*.opacity(1);*/
+			font-size: @carousel-control-font-size;
+			color: @gray-light;
+			text-align: center;
+			text-shadow: none;
+
+			&.left {
+				#gradient > .horizontal(@start-color: rgba(0,0,0,.1); @end-color: rgba(0,0,0,.0001));
+			}
+			&.right {
+				left: auto;
+				right: 0;
+				#gradient > .horizontal(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.1));
+			}
+
+			// Hover/focus state
+			&:hover,
+			&:focus {
+				outline: none;
+				color: @brand-primary;
+				text-decoration: none;
+				.opacity(1);
+			}
+
+			// Toggles
+			.icon-prev,
+			.icon-next,
+			.glyphicon-chevron-left,
+			.glyphicon-chevron-right {
+				position: absolute;
+				top: 50%;
+				z-index: 5;
+				display: inline-block;
+			}
+			.icon-prev,
+			.glyphicon-chevron-left {
+				left: 50%;
+			}
+			.icon-next,
+			.glyphicon-chevron-right {
+				right: 50%;
+			}
+			.icon-prev,
+			.icon-next {
+				width:  20px;
+				height: 20px;
+				margin-top: -10px;
+				margin-left: -10px;
+				font-family: serif;
+			}
+			.fa-chevron-left {
+				.glyphicon-chevron-left;
+			}
+			.fa-chevron-right {
+				.glyphicon-chevron-right;
+			}
+		}
+	}
+
+	&.sponsoren-slider {
+		padding: 0 50px;
+		.carousel-control {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 50px;
+			.opacity(1);
+			font-size: @carousel-control-font-size;
+			color: @gray-light;
+			text-align: center;
+			text-shadow: none;
+			&.left {
+				background: none;
+				filter: none;
+			}
+			&.right {
+				left: auto;
+				right: 0;
+				background: none;
+				filter: none;
+			}
+
+			// Hover/focus state
+			&:hover,
+			&:focus {
+				outline: none;
+				color: @brand-primary;
+				text-decoration: none;
+				.opacity(1);
+			}
+
+			// Toggles
+			.icon-prev,
+			.icon-next,
+			.glyphicon-chevron-left,
+			.glyphicon-chevron-right {
+				position: absolute;
+				top: 36%;
+				z-index: 5;
+				display: inline-block;
+			}
+			.icon-prev,
+			.glyphicon-chevron-left {
+				left: 35%;
+			}
+			.icon-next,
+			.glyphicon-chevron-right {
+				right: 35%;
+			}
+
+			.fa-chevron-left {
+				.glyphicon-chevron-left;
+			}
+			.fa-chevron-right {
+				.glyphicon-chevron-right;
+			}
+		}
+	}
+}
+
+
+
+//
+// Footer
+// --------------------------------------------------
+
+footer {
+	margin-top: 50px;
+	.footer-sponsors {
+		background-color: #dfdfdf;
+		padding: 50px 0;
+		position: relative;
+		.lead {
+			position: absolute;
+			left: 0;
+			top: 12px;
+			width: 100%;
+			text-align: center;
+			text-transform: uppercase;
+			margin: 0;
+			color: @gray-light;
+			font-size: 20px;
+		}
+		.nav-pills {
+			.nav-justified();
+			li {
+				a {
+					text-align: center;
+					padding: 5px 12px;
+					border-radius: 0;
+					&:hover,
+					&:focus {
+						background-color: transparent;
+					}
+				}
+			}
+			img {
+				max-height: 50px;
+			}
+		}
+	}
+	.footer-links {
+		color: #fff;
+		padding: 30px 0;
+		background: @gray-light url('../images/pattern_carbon.png') top left;
+		.footer-linklist {
+			p {
+				margin: 0;
+			}
+			.nav-pills {
+				font-size: 12px;
+				li {
+					padding: 5px 15px 5px 0;
+					a {
+						color: #fff;
+						padding: 0;
+						&:hover,
+						&:focus {
+							text-decoration: underline;
+							color: #fff;
+							background-color: transparent;
+							border-radius: 0;
+						}
+					}
+				}
+			}
+		}
+		.socialmedia-buttons {
+			margin: 0;
+			padding: 0;
+			li {
+				list-style: none;
+				display: inline-block;
+				padding-left: 10px;
+			}
+			a {
+				display: block;
+				padding: 5px;
+				height: 50px;
+				width: 50px;
+				text-align: center;
+				border-radius: 25px;
+				padding-top: 12px;
+				color: @gray-lighter;
+				background-color: @gray;
+				.transition-property(color, background-color;);
+				.transition-duration(0.2s, 0.2s;);
+				&:hover,
+				&:focus {
+					color: #fff;
+					background-color: @brand-primary;
+				}
+			}
+		}
+	}
+}
+
+
+
+//
+// Bootstrap Media Object in List Group
+// --------------------------------------------------
+
+.list-group {
+	margin-bottom: 0;
+	.list-group-item {
+		&:first-child,
+		&:last-child {
+			border-radius: 0;
+		}
+		.media {
+			.pull-left {
+				overflow: hidden;
+				width: 60px;
+				height: 60px;
+				.media-object {
+				}
+			}
+			.media-heading {
+				font-size: 16px;
+			}
+			.media-teaser {
+				margin: 0;
+				font-size: 12px;
+			}
+			.media-date {
+				padding: 0;
+				margin: 0;
+				font-size: 12px;
+				color: @gray-light;
+			}
+			&:last-child {
+				border-bottom: 0 none;
+			}
+		}
+	}
+}
+
+
+
+//
+// Social Media Feed
+// --------------------------------------------------
+
+.socialmedia-feed {
+	.nav-tabs {
+		li {
+			> a {
+				color: @gray;
+				border-radius: 0;
+				&:hover,
+				&:focus {
+					color: @brand-primary;
+					background-color: #fff;
+					border-top-color: transparent;
+					border-left-color: transparent;
+					border-right-color: transparent;
+				}
+			}
+			&.active {
+				a {
+					&,
+					&:hover,
+					&:focus {
+						color: @brand-primary;
+						background-color: #fff;
+						border-top-color: @gray-lighter;
+						border-left-color: @gray-lighter;
+						border-right-color: @gray-lighter;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+//
+// Spacing
+// --------------------------------------------------
+
+.row-space-top-lg {
+	margin-top: 50px;
+}
+
+.row-space-bottom-lg {
+	margin-bottom: 50px;
+}
+
+.content-wrap {
+	margin-bottom: 30px;
+}

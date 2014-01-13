@@ -1,0 +1,59 @@
+/**
+ * Smallest viewport set to small displays (480px)
+ * These settings are active on smartphones
+ */
+@media (max-width: @screen-xs-max)
+{
+	.row-space-top-lg {
+		margin-top: 0;
+	}
+
+	.row-space-bottom-lg {
+		margin-bottom: 0;
+	}
+
+	.navbar {
+		.navbar-brand {
+			img {
+				display: none;
+			}
+		}
+	}
+
+	.breadcrumb {
+		display: none;
+	}
+
+	.carousel-caption {
+		display: none;
+	}
+
+	.carousel-indicators {
+		display: none;
+	}
+
+	footer {
+		.footer-links {
+			text-align: center;
+			.footer-linklist {
+				float: none !important;
+				display: block;
+				.nav-pills {
+					margin-bottom: 30px;
+					.nav-justified();
+					li {
+						padding: 0;
+						> a {
+							padding: 5px 0;
+						}
+					}
+				}
+			}
+			.socialmedia-buttons {
+				margin-top: 30px;
+				float: none !important;
+				display: block;
+			}
+		}
+	}
+}
