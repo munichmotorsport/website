@@ -75,4 +75,4 @@ Icon
 # Sublime Text 2
 sftp-config.*
 *.sublime-project
-*.sublime-worksapce
+*.sublime-workspace
