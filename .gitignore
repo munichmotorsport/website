@@ -37,7 +37,6 @@ nb-configuration.xml
 build.xml
 build.properties
 
-
 ### Windows ###
 # Windows image file caches
 Thumbs.db
@@ -55,7 +54,6 @@ $RECYCLE.BIN/
 .LSOverride
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -69,8 +67,12 @@ Icon
 !.git*
 *~
 
-
 # Executables
 *.exe
 *.out
 *.app
+
+# Sublime Text 2
+*.sftp-config.json
+*.sublime-project
+*.sublime-worksapce
