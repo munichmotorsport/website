@@ -73,6 +73,6 @@ Icon
 *.app
 
 # Sublime Text 2
-*.sftp-config.json
+sftp-config.*
 *.sublime-project
 *.sublime-worksapce
