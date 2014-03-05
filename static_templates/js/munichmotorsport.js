@@ -12,7 +12,7 @@
 			// fake static variable
 			if(typeof repositionNavbar.staticVars == 'undefined') {
 				repositionNavbar.staticVars = true;
-				repositionNavbar.initialNavbarPos = $('.navbar').offset().top;
+				repositionNavbar.initialNavbarPos = $('nav.navbar').offset().top;
 				repositionNavbar.flag = -1;
 				repositionNavbar.diff = 0;
 				repositionNavbar.brand = $('.navbar-brand > img');
@@ -22,7 +22,7 @@
 				repositionNavbar.brand.css('margin-left', -repositionNavbar.brandWidth+'px');
 			}
 
-			repositionNavbar.diff = repositionNavbar.initialNavbarPos;
+			// repositionNavbar.diff = repositionNavbar.initialNavbarPos;
 			repositionNavbar.diff = repositionNavbar.initialNavbarPos - $(document).scrollTop();
 
 			if(repositionNavbar.diff <= 0) {
@@ -69,21 +69,8 @@
 		}
 	}
 
-	$(document).ready(function()
+	var replaceFooterSponsores = function()
 	{
-		$(window).resize($.debounce(200, fadeDropdownOnHover));
-		fadeDropdownOnHover();
-
-		$(window).resize($.debounce(200, resizeJumbotronCarousel));
-		resizeJumbotronCarousel();
-
-		$(this).on('scroll', function(ev){
-			repositionNavbar();
-		});
-		repositionNavbar();
-
-		$('.socialmedia-feed .nav a:first').tab('show');
-
 		$('.footer-sponsors .nav-pills > li > a').each(function(){
 			this.image = $(this).find('img');
 			this.srcOrig = this.image.attr('src');
@@ -94,6 +81,24 @@
 					this.image.attr('src', this.srcOrig);
 				}
 			);
+		});
+	}
+
+	$(document).ready(function()
+	{
+		$(window).resize($.debounce(200, fadeDropdownOnHover));
+
+		$(window).resize($.debounce(200, resizeJumbotronCarousel));
+
+		$(this).on('scroll', function(ev){repositionNavbar();});
+
+		$('.socialmedia-feed .nav a:first').tab('show');
+
+		$(window).load(function() {
+			fadeDropdownOnHover();
+			resizeJumbotronCarousel();
+			repositionNavbar();
+			replaceFooterSponsores();
 		});
 	});
 
